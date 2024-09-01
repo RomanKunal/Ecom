@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Paytm</title>
+</head>
+<body onload="document.paytm_form.submit()">
+    <h3>Redirecting to Paytm, please wait...</h3>
+    <form action="{{ payment_url }}" method="POST" name="paytm_form">
+        {% for key, value in paytm_params.items %}
+        <input type="hidden" name="{{ key }}" value="{{ value }}">
+        {% endfor %}
+    </form>
+</body>
+</html>
